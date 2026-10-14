@@ -1,0 +1,32 @@
+{
+  "name": "floating-todo",
+  "version": "0.1.0",
+  "displayName": "Floating Todo",
+  "description": "A small daily checklist you can pop out into a floating window: today's tasks, a progress bar, carry-over from earlier days, and a 7-day history.",
+  "author": "nathanyi96",
+  "license": "MIT",
+  "iconPath": "assets/icon.png",
+  "tags": ["todo", "checklist", "productivity"],
+  "backend": {
+    "entryPoint": "backend/server.py",
+    "port": "auto",
+    "healthCheck": "/health"
+  },
+  "ui": {
+    "entry": "dist/index.mjs",
+    "pages": [
+      {
+        "route": "/apps/floating-todo",
+        "label": "Todo",
+        "icon": "CheckSquare"
+      }
+    ]
+  },
+  "permissions": {
+    "api": ["/apps/floating-todo/api", "/apps/floating-todo/api/*"],
+    "storage": true
+  },
+  "platform": {
+    "os": ["macos", "linux"]
+  }
+}
